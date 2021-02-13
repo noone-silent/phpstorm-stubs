@@ -390,6 +390,15 @@ class PDFlib
 	 *
 	 * @return bool
 	 *
+	 * @link https://secure.php.net/manual/en/function.pdf-close-pdi-document.php
+	 */
+	function close_pdi_document($doc){}
+
+	/**
+	 * @param int $doc
+	 *
+	 * @return bool
+	 *
 	 * @link https://secure.php.net/manual/en/function.pdf-close-pdi.php
 	 *
      * @see PDF_close_pdi_document()
@@ -894,8 +903,8 @@ class PDFlib
 	 * @return string
 	 *
 	 * @link https://secure.php.net/manual/en/function.pdf-get-parameter.php
-
 	 */
+    #[Deprecated('This function is deprecated since PDFlib version 9, use PDF_get_option() Link instead.')]
 	function get_parameter($key , $modifier){}
 	/**
 	 * @param string $key
@@ -928,9 +937,18 @@ class PDFlib
 	 * @return float
 	 *
 	 * @link https://secure.php.net/manual/en/function.pdf-get-value.php
-
 	 */
+    #[Deprecated('This function is deprecated since PDFlib version 9, use PDF_get_option() Link instead.')]
 	function get_value($key , $modifier){}
+	/**
+	 * @param string $key
+	 * @param float $modifier
+	 *
+	 * @return float
+	 *
+	 * @link https://secure.php.net/manual/en/function.pdf-get-option.php
+	 */
+	function get_option($key , $modifier){}
 	/**
 	 * @param int $font
 	 * @param string $keyword
@@ -1044,6 +1062,18 @@ class PDFlib
 	 * @link https://secure.php.net/manual/en/function.pdf-load-image.php
 	 */
 	function load_image($imagetype , $filename , $optlist){}
+
+	/**
+     * Load a rich media asset or file attachment from a disk-based or virtual file.
+     *
+     * @param string $type
+	 * @param string $filename
+	 * @param string $optlist
+	 *
+	 * @return int
+	 * @link https://secure.php.net/manual/en/function.pdf-load-asset.php
+	 */
+	function load_asset($type, $filename , $optlist){}
 
 	/**
 	 * @param string $spotname
@@ -1348,7 +1378,18 @@ class PDFlib
 	 *
 	 * @link https://secure.php.net/manual/en/function.pdf-set-parameter.php
 	 */
+    #[Deprecated('This function is deprecated since PDFlib version 9, use PDF_set_option() Link instead.')]
 	function set_parameter($key, $value){}
+
+	/**
+	 * @param string $key
+	 * @param string $value
+	 *
+	 * @return bool
+	 *
+	 * @link https://secure.php.net/manual/en/function.pdf-set-option.php
+	 */
+	function set_option($key, $value){}
 
 	/**
 	 * @param float $x
@@ -1368,6 +1409,7 @@ class PDFlib
 	 *
 	 * @link https://secure.php.net/manual/en/function.pdf-set-value.php
 	 */
+    #[Deprecated('This function is deprecated since PDFlib version 9, use PDF_set_option() Link instead.')]
 	function set_value($key, $value){}
 
 	/**
